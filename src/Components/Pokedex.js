@@ -17,7 +17,7 @@ class Pokedex extends Component {
   render() {
     return (
       <Container>
-        <h1>Hand</h1>
+        <h1>{this.props.isWinner ? "Winning " : "Losing "}Hand</h1>
         <p>Total XP: {this.props.hand.totalXP}</p>
         <RowContainer>
           {this.props.hand.pokemans.map((p, index) => {

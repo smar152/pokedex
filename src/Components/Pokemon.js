@@ -29,7 +29,6 @@ const convert = (number) => {
 class Pokemon extends Component {
   render() {
     const { name, id, type, base_experience: xp } = this.props.pokemon;
-    // console.log(this.props.pokemon);
     return (
       <div>
         <PokeCard>
