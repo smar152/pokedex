@@ -7,9 +7,19 @@ const PokeCard = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: lightblue;
+  background-color: white;
+  filter: drop-shadow(10px 10px 5px gray);
 `;
+const DataTitle = styled("h2")`
+  font-weight: 400;
+`;
+
 const DataItem = styled("div")``;
+
+const DataImage = styled("div")`
+  background-color: #f2f2f2;
+  padding: 20px;
+`;
 
 const convert = (number) => {
   const numZeroes = Math.max(0, 3 - String(number).length);
@@ -19,21 +29,22 @@ const convert = (number) => {
 class Pokemon extends Component {
   render() {
     const { name, id, type, base_experience: xp } = this.props.pokemon;
-    console.log(this.props.pokemon);
+    // console.log(this.props.pokemon);
     return (
       <div>
         <PokeCard>
-          <DataItem>{name}</DataItem>
-          <DataItem>
+          <DataImage>
             <img
               src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${convert(
                 id
               )}.png`}
-              alt=""
+              alt="pokemon"
+              width="150px"
             />
-          </DataItem>
-          <DataItem>{type}</DataItem>
-          <DataItem>{xp}</DataItem>
+          </DataImage>
+          <DataTitle>{name}</DataTitle>
+          <DataItem>Type: {type}</DataItem>
+          <DataItem>EXP: {xp}</DataItem>
         </PokeCard>
       </div>
     );
